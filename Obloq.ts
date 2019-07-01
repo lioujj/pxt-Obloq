@@ -1484,7 +1484,7 @@ namespace Obloq {
     //% block="Obloq setup mqtt | Pin set: | receiving data (green wire): %receive| sending data (blue wire): %send | Wi-Fi: | name: %SSID| password: %PASSWORD| IoT service: | address: %address| port: %port| Iot_id: %IOT_ID| Iot_pwd: %IOT_PWD| (default topic_0) Topic: %IOT_TOPIC"
     export function Obloq_mqtt_setup_new(/*serial*/receive: SerialPin, send: SerialPin,
                                      /*wifi*/SSID: string, PASSWORD: string,
-                                     /*mqtt*/adress:string, port:number, IOT_ID: string, IOT_PWD: string, IOT_TOPIC: string):
+                                     /*mqtt*/address:string, port:number, IOT_ID: string, IOT_PWD: string, IOT_TOPIC: string):
         void {
         OBLOQ_WIFI_SSID = SSID
         OBLOQ_WIFI_PASSWORD = PASSWORD
@@ -1494,7 +1494,7 @@ namespace Obloq {
         OBLOQ_SERIAL_TX = send
         OBLOQ_SERIAL_RX = receive
         Obloq_serial_init()
-        Obloq_start_connect_mqtt(address,port, "connect wifi")
+        Obloq_start_connect_mqtt_new(address,port, "connect wifi")
     }
 
     
