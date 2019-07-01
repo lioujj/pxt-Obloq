@@ -22,6 +22,6 @@
 	"Obloq.Obloq_http_get|block": "http(get) | url %url| 超時(毫秒) %time",
 	"Obloq.Obloq_http_post|block": "http(post) | url %url| content %content| 超時(毫秒) %time",
 	"Obloq.Obloq_http_put|block": "http(put) | url %url| content %content| 超時(毫秒) %time",
-	"Obloq.Obloq_mqtt_setup|block": "Obloq mqtt 初始設置 | 引腳設置: | 接收數據(綠色導線): %receive| 發送數據(藍色導線): %send | Wi-Fi: | 名稱: %SSID| 密碼: %PASSWORD| 物聯網服務: | 位址: %address| 通訊埠： %port| Iot_id: %IOT_ID| Iot_pwd: %IOT_PWD| (默認 topic_0) Topic: %IOT_TOPIC",
+	"Obloq.Obloq_mqtt_setup_new|block": "Obloq mqtt 初始設置 | 引腳設置: | 接收數據(綠色導線): %receive| 發送數據(藍色導線): %send | Wi-Fi: | 名稱: %SSID| 密碼: %PASSWORD| 物聯網服務: | 位址: %address| 通訊埠： %port| Iot_id: %IOT_ID| Iot_pwd: %IOT_PWD| (默認 topic_0) Topic: %IOT_TOPIC",
 	"Obloq.Obloq_http_reset|block": "重設http IP： %IP| 通訊埠： %PORT"
 }
