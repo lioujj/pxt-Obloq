@@ -1509,5 +1509,23 @@ namespace Obloq {
     export function Obloq_http_reset(IP: string, PORT: number): void {
         OBLOQ_HTTP_IP = IP
         OBLOQ_HTTP_PORT = PORT
-    }   
+    }
+    /**
+     * pin set
+     * @param receive to receive ,eg: SerialPin.P1
+     * @param send to send ,eg: SerialPin.P2
+    */
+    export function Obloq_serial_pin_set(receive: SerialPin, send: SerialPin): void { 
+        //while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
+        OBLOQ_SERIAL_TX = send
+        OBLOQ_SERIAL_RX = receive
+        Obloq_serial_init()
+    }
+    /**
+     * Disconnect the serial port.
+    */
+    export function Obloq_serial_quit(): void {        
+        obloqWriteString("quit!\r")
+        OBLOQ_SERIAL_INIT = OBLOQ_BOOL_TYPE_IS_FALSE
+    }
 } 
