@@ -1510,11 +1510,15 @@ namespace Obloq {
         OBLOQ_HTTP_IP = IP
         OBLOQ_HTTP_PORT = PORT
     }
+
     /**
      * pin set
      * @param receive to receive ,eg: SerialPin.P1
      * @param send to send ,eg: SerialPin.P2
     */
+    //% weight=40
+    //% blockId=Obloq_serial_pin_set
+    //% block="serial Pin set: receiving data (green wire): %receive| sending data (blue wire): %send"
     export function Obloq_serial_pin_set(receive: SerialPin, send: SerialPin): void { 
         //while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
         OBLOQ_SERIAL_TX = send
@@ -1524,8 +1528,12 @@ namespace Obloq {
     /**
      * Disconnect the serial port.
     */
+    //% weight=35
+    //% blockId=Obloq_serial_quit
+    //% block="disconnect the Serial connection"
     export function Obloq_serial_quit(): void {        
         obloqWriteString("quit!\r")
         OBLOQ_SERIAL_INIT = OBLOQ_BOOL_TYPE_IS_FALSE
-    }
+    } 
+
 } 
