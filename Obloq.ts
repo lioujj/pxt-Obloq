@@ -1530,7 +1530,7 @@ namespace Obloq {
         if (!OBLOQ_SERIAL_INIT) {
             Obloq_serial_init()
         }
-        obloqSetRxBufferSize(256)
+        obloqSetRxBufferSize(250)
         obloqWriteString("|3|1|http://" + OBLOQ_HTTP_IP + ":" + OBLOQ_HTTP_PORT + "/" + url + "|\r")
 
         return Obloq_http_wait_request(time)
