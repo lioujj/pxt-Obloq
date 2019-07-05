@@ -4,17 +4,17 @@ namespace Obloq {
 
     //%
     void obloqSetTxBufferSize(int size){
-        /*if(size > 100) {
-            size = 100;
-        }*/
+        if(size > 256) {
+            size = 256;
+        }
         uBit.serial.setTxBufferSize(size);
     }
 
     //%
     void obloqSetRxBufferSize(int size){
-        /*if(size > 100) {
-            size = 100;
-        }*/
+        if(size > 256) {
+            size = 256;
+        }
         uBit.serial.setRxBufferSize(size);
     }
 
