@@ -225,8 +225,8 @@ namespace Obloq {
             OBLOQ_SERIAL_RX,
             BaudRate.BaudRate9600
         )
-        obloqSetTxBufferSize(600)
-        obloqSetRxBufferSize(600)
+        obloqSetTxBufferSize(300)
+        obloqSetRxBufferSize(300)
         obloqWriteString("\r")
         item = serial.readString()
         OBLOQ_SERIAL_INIT = OBLOQ_BOOL_TYPE_IS_TRUE
@@ -1510,7 +1510,6 @@ namespace Obloq {
         OBLOQ_HTTP_IP = IP
         OBLOQ_HTTP_PORT = PORT
     }
-
     /**
      * pin set
      * @param receive to receive ,eg: SerialPin.P1
@@ -1535,7 +1534,6 @@ namespace Obloq {
         obloqWriteString("quit!\r")
         OBLOQ_SERIAL_INIT = OBLOQ_BOOL_TYPE_IS_FALSE
     }
-
     /**
      * The HTTP get request.url(string):URL:time(ms): private long maxWait
      * @param time set timeout, eg: 10000
@@ -1555,6 +1553,5 @@ namespace Obloq {
         obloqWriteString("|3|1|https://" + OBLOQ_HTTP_IP + ":" + OBLOQ_HTTP_PORT + "/" + url + "|\r")
 
         return Obloq_http_wait_request(time)
-    } 
-
+    }    
 } 
