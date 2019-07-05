@@ -1534,6 +1534,27 @@ namespace Obloq {
     export function Obloq_serial_quit(): void {        
         obloqWriteString("quit!\r")
         OBLOQ_SERIAL_INIT = OBLOQ_BOOL_TYPE_IS_FALSE
+    }
+
+    /**
+     * The HTTP get request.url(string):URL:time(ms): private long maxWait
+     * @param time set timeout, eg: 10000
+    */
+    //% weight=34
+    //% blockId=Obloq_https_get
+    //% block="https(get) | url %url| timeout(ms) %time"
+    //% advanced=false
+    export function Obloq_https_get(url: string, time: number): string {
+        while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
+        if (!OBLOQ_HTTP_INIT)
+            return OBLOQ_STR_TYPE_IS_NONE
+
+        if (!OBLOQ_SERIAL_INIT) {
+            Obloq_serial_init()
+        }
+        obloqWriteString("|3|1|https://" + OBLOQ_HTTP_IP + ":" + OBLOQ_HTTP_PORT + "/" + url + "|\r")
+
+        return Obloq_http_wait_request(time)
     } 
 
 } 
